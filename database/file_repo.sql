@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Aug 30, 2025 at 12:45 AM
+=======
+-- Generation Time: Jul 24, 2025 at 05:55 PM
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,6 +28,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `classrooms`
 --
 
@@ -2503,6 +2508,8 @@ INSERT INTO `course_groups` (`id`, `course_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 -- Table structure for table `files`
 --
 
@@ -2512,15 +2519,20 @@ CREATE TABLE `files` (
   `filename` varchar(255) DEFAULT NULL,
   `original_name` varchar(255) DEFAULT NULL,
   `upload_time` timestamp NOT NULL DEFAULT current_timestamp(),
+<<<<<<< HEAD
   `folder_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+=======
+  `folder_id` int(11) DEFAULT NULL
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `files`
 --
 
+<<<<<<< HEAD
 INSERT INTO `files` (`id`, `user_id`, `filename`, `original_name`, `upload_time`, `folder_id`, `created_at`, `updated_at`) VALUES
 (4, 1, '1751618999_2025.2.cse412_courseOutline.pdf', '2025.2.cse412_courseOutline.pdf', '2025-07-04 08:49:59', NULL, '2025-08-27 21:09:40', NULL),
 (8, 12, '1751629491_My website.docx', 'My website.docx', '2025-07-04 11:44:51', NULL, '2025-08-27 21:09:40', NULL),
@@ -2549,6 +2561,18 @@ CREATE TABLE `final_submissions` (
   `status` enum('pending','submitted','approved','rejected') DEFAULT 'pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+INSERT INTO `files` (`id`, `user_id`, `filename`, `original_name`, `upload_time`, `folder_id`) VALUES
+(4, 1, '1751618999_2025.2.cse412_courseOutline.pdf', '2025.2.cse412_courseOutline.pdf', '2025-07-04 08:49:59', NULL),
+(8, 12, '1751629491_My website.docx', 'My website.docx', '2025-07-04 11:44:51', NULL),
+(16, 17, '1751645063_2025.2.cse412_courseOutline.pdf', '2025.2.cse412_courseOutline.pdf', '2025-07-04 16:04:23', NULL),
+(17, 19, '1752393999_does-perfume-expire-hero-mudc-042820.jpg', 'does-perfume-expire-hero-mudc-042820.jpg', '2025-07-13 08:06:39', NULL),
+(18, 19, '1752394290_1752079842_img-250709221340-001.pdf', '1752079842_img-250709221340-001.pdf', '2025-07-13 08:11:30', NULL),
+(20, 21, '6881f51cdc11b.txt', 'Assignment08', '2025-07-24 08:55:56', 1),
+(21, 21, '6881f89951c0a.zip', 'folder_file_manager.zip', '2025-07-24 09:10:49', 2),
+(24, 21, '6881ff529f163.docx', '2023-1-60-042_Lab04.docx', '2025-07-24 09:39:30', 3),
+(25, 21, '6881ff7c8e328.png', 'Ping.png', '2025-07-24 09:40:12', NULL);
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 
 -- --------------------------------------------------------
 
@@ -2574,6 +2598,7 @@ INSERT INTO `folders` (`id`, `user_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `groups`
 --
 
@@ -3348,11 +3373,14 @@ CREATE TABLE `task_work` (
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+<<<<<<< HEAD
   `name` varchar(150) DEFAULT NULL,
   `university_id` varchar(50) DEFAULT NULL,
   `cgpa` decimal(3,2) DEFAULT NULL,
@@ -3360,12 +3388,18 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `role` enum('student','professor') NOT NULL DEFAULT 'student'
+=======
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
+<<<<<<< HEAD
 INSERT INTO `users` (`id`, `name`, `university_id`, `cgpa`, `email`, `password`, `phone`, `role`) VALUES
 (1, NULL, NULL, NULL, 'red441651@gmail.com', '$2y$10$xDuyKgKWAnSU/Zj3KQAQL.f03JBXbG6jwyXDiu8/T9GvZD9N6/ZDC', NULL, 'student'),
 (12, NULL, NULL, NULL, '', '$2y$10$VoDUCEvYTIoy6EO5.yDZnOveofLx2S.67cbhxqi9Lyv2ImOD0mli2', '01758922051', 'student'),
@@ -3399,12 +3433,23 @@ INSERT INTO `users` (`id`, `name`, `university_id`, `cgpa`, `email`, `password`,
 (44, NULL, '2019-2-60-101', NULL, '2019-2-60-101@gmail.com', '$2y$10$JDNw4IdEZNI7AyNZaxO7MuR9xlxp7BrhOARRwnoC2/u.28caSzkWW', NULL, 'student'),
 (45, NULL, '2018-1-60-101', NULL, '2018-1-60-101@gmail.com', '$2y$10$7J6eySsiRmvBlmpX0fN9Uepnlllk8BA0hshk5/j8t5xJ8EHXpuTuO', NULL, 'student'),
 (46, NULL, NULL, NULL, '2017-1-60-101@gmail.com', '$2y$10$J7Z8035beEWXSNnSLr/8bOMAVW1.nAep.VBu9KVHmyOuVBvPFffem', NULL, 'professor');
+=======
+INSERT INTO `users` (`id`, `email`, `password`, `phone`) VALUES
+(1, 'red441651@gmail.com', '$2y$10$xDuyKgKWAnSU/Zj3KQAQL.f03JBXbG6jwyXDiu8/T9GvZD9N6/ZDC', NULL),
+(12, '', '$2y$10$VoDUCEvYTIoy6EO5.yDZnOveofLx2S.67cbhxqi9Lyv2ImOD0mli2', '01758922051'),
+(17, '2023-1-60-042@std.ewubd.edu', '$2y$10$VGJqjj.Wdg3mFw9q2R/3WuZ5b2F18m/JDpD73jtpSuCi3zNSl3Sru', NULL),
+(18, '2022-1-60-389@std.ewubd.edu', '$2y$10$PEXB..WoAtdm6SVtbRPsvuJ2zeyF.jWNf4zZ6vJKphBA2DYyngMMy', NULL),
+(19, '2023-1-60-050@std.ewubd.edu', '$2y$10$nagOfvSJNGFzyKsVJypa3e8May1bK.6OBgiZlRiyHK2oO2Ym3UU7a', NULL),
+(20, '2023-1-60-0245@std.ewubd.edu', '$2y$10$7WBosTeQVO6sB4J1n21.aeOWzajQGD6AXsR5w0GveyQ7Wgy3KZs.m', NULL),
+(21, '2023-1-60-020@std.ewubd.edu', '$2y$10$Koo1jyS2b0xvU.vKreaYouVfAYW/.gd4rrITV43nSgnBtCym3BCgS', NULL);
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 
 --
 -- Indexes for dumped tables
 --
 
 --
+<<<<<<< HEAD
 -- Indexes for table `classrooms`
 --
 ALTER TABLE `classrooms`
@@ -3443,6 +3488,8 @@ ALTER TABLE `course_groups`
   ADD UNIQUE KEY `uq_course_groups_name` (`course_id`,`name`);
 
 --
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 -- Indexes for table `files`
 --
 ALTER TABLE `files`
@@ -3451,12 +3498,15 @@ ALTER TABLE `files`
   ADD KEY `fk_folder` (`folder_id`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `final_submissions`
 --
 ALTER TABLE `final_submissions`
   ADD PRIMARY KEY (`id`);
 
 --
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 -- Indexes for table `folders`
 --
 ALTER TABLE `folders`
@@ -3464,6 +3514,7 @@ ALTER TABLE `folders`
   ADD UNIQUE KEY `user_id` (`user_id`,`name`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `groups`
 --
 ALTER TABLE `groups`
@@ -3509,6 +3560,8 @@ ALTER TABLE `task_work`
   ADD KEY `fk_task_work_task` (`task_id`);
 
 --
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -3521,6 +3574,7 @@ ALTER TABLE `users`
 --
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `classrooms`
 --
 ALTER TABLE `classrooms`
@@ -3561,6 +3615,12 @@ ALTER TABLE `files`
 --
 ALTER TABLE `final_submissions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+=======
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 
 --
 -- AUTO_INCREMENT for table `folders`
@@ -3569,6 +3629,7 @@ ALTER TABLE `folders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
@@ -3609,12 +3670,19 @@ ALTER TABLE `task_work`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+=======
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 
 --
 -- Constraints for dumped tables
 --
 
 --
+<<<<<<< HEAD
 -- Constraints for table `classrooms`
 --
 ALTER TABLE `classrooms`
@@ -3647,6 +3715,8 @@ ALTER TABLE `course_groups`
   ADD CONSTRAINT `fk_course_groups_course` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
 
 --
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 -- Constraints for table `files`
 --
 ALTER TABLE `files`
@@ -3658,6 +3728,7 @@ ALTER TABLE `files`
 --
 ALTER TABLE `folders`
   ADD CONSTRAINT `folders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+<<<<<<< HEAD
 
 --
 -- Constraints for table `groups`
@@ -3682,6 +3753,8 @@ ALTER TABLE `group_members_old`
 --
 ALTER TABLE `task_work`
   ADD CONSTRAINT `fk_task_work_task` FOREIGN KEY (`task_id`) REFERENCES `group_tasks` (`id`) ON DELETE CASCADE;
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

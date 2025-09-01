@@ -29,24 +29,35 @@ if (isset($_SESSION['success'])) {
     $success = $_SESSION['success'];
     unset($_SESSION['success']);
 }
+<<<<<<< HEAD
 require_once 'student_utils.php';
 $student_uid_for_list = null;
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
     $student_uid_for_list = getStudentUniversityId($conn, (int)$_SESSION['user_id']);
 }
+=======
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Files | Educollab</title>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Files | Cloud Storage</title>
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
+<<<<<<< HEAD
             --educollab-primary: #4a6fa5;
             --educollab-secondary: #166088;
             --educollab-accent: #4cb5ae;
@@ -64,11 +75,28 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             --transition: all 0.3s ease;
         }
 
+=======
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #4cc9f0;
+            --danger: #f72585;
+            --warning: #f8961e;
+            --info: #560bad;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+<<<<<<< HEAD
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -78,17 +106,32 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             min-height: 100vh;
         }
 
+=======
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
+<<<<<<< HEAD
             padding: 1.5rem;
             background: white;
             border-radius: var(--border-radius);
@@ -119,11 +162,31 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             gap: 1rem;
         }
 
+=======
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            font-size: 1.8rem;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .logout-link {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             text-decoration: none;
+<<<<<<< HEAD
             padding: 0.75rem 1.25rem;
             border-radius: var(--border-radius);
             background-color: #fef2f2;
@@ -193,10 +256,38 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
         .message {
             padding: 1.25rem 1.5rem;
             margin-bottom: 2rem;
+=======
+            color: var(--danger);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .logout-link:hover {
+            color: #d0006f;
+        }
+        
+        .page-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .page-title i {
+            color: var(--primary);
+        }
+        
+        .message {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
             border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             gap: 0.75rem;
+<<<<<<< HEAD
             animation: fadeIn 0.5s ease;
             box-shadow: var(--shadow);
         }
@@ -222,12 +313,37 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             animation: slideIn 0.6s ease;
         }
 
+=======
+        }
+        
+        .message.error {
+            background-color: #fdecea;
+            color: var(--danger);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .message.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        .folder-nav {
+            background-color: white;
+            padding: 1.25rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .folder-controls {
             display: flex;
             align-items: center;
             gap: 1rem;
             flex-wrap: wrap;
         }
+<<<<<<< HEAD
 
         .folder-select {
             flex: 1;
@@ -251,11 +367,35 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
         }
 
+=======
+        
+        .folder-select {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #ddd;
+            font-family: inherit;
+            background-color: var(--light);
+            transition: var(--transition);
+        }
+        
+        .folder-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+<<<<<<< HEAD
             padding: 0.75rem 1.5rem;
+=======
+            padding: 0.75rem 1.25rem;
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
             border-radius: var(--border-radius);
             font-family: inherit;
             font-weight: 500;
@@ -263,6 +403,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             transition: var(--transition);
             text-decoration: none;
             border: none;
+<<<<<<< HEAD
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -288,11 +429,36 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             transform: translateY(-2px);
         }
 
+=======
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .file-list {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             overflow: hidden;
+<<<<<<< HEAD
             margin-bottom: 2rem;
             animation: fadeIn 0.7s ease;
         }
@@ -325,11 +491,37 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             border-bottom: none;
         }
 
+=======
+        }
+        
+        .file-list-header {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            padding: 1rem 1.5rem;
+            background-color: var(--light);
+            font-weight: 600;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .file-item {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            transition: var(--transition);
+        }
+        
+        .file-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .file-info {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
+<<<<<<< HEAD
 
         .file-icon-wrapper {
             display: flex;
@@ -350,17 +542,34 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             font-weight: 500;
         }
 
+=======
+        
+        .file-icon {
+            font-size: 1.5rem;
+            color: var(--primary-light);
+        }
+        
+        .file-name {
+            font-weight: 500;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .file-actions {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             justify-content: flex-end;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .action-btn {
             background: none;
             border: none;
             cursor: pointer;
+<<<<<<< HEAD
             color: var(--educollab-dark);
             transition: var(--transition);
             padding: 0.75rem;
@@ -447,10 +656,82 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             animation: fadeIn 0.9s ease;
         }
 
+=======
+            color: var(--dark);
+            transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 2.25rem;
+            height: 2.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .action-btn:hover {
+            background-color: #f0f0f0;
+            color: var(--primary);
+        }
+        
+        .action-btn.view {
+            color: var(--success);
+        }
+        
+        .action-btn.rename {
+            color: var(--warning);
+        }
+        
+        .action-btn.delete {
+            color: var(--danger);
+        }
+        
+        .rename-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+        
+        .rename-form input {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+        }
+        
+        .rename-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .rename-form .btn {
+            padding: 0.5rem 1rem;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+        
+        .upload-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         .upload-link {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
+<<<<<<< HEAD
             padding: 1.25rem 2.5rem;
             background: var(--educollab-accent-gradient);
             color: white;
@@ -552,20 +833,46 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             to { transform: translateY(0); opacity: 1; }
         }
 
+=======
+            padding: 1rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .upload-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         @media (max-width: 768px) {
             .file-item {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+<<<<<<< HEAD
 
             .file-actions {
                 justify-content: flex-start;
             }
 
+=======
+            
+            .file-actions {
+                justify-content: flex-start;
+            }
+            
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
             .folder-controls {
                 flex-direction: column;
                 align-items: stretch;
             }
+<<<<<<< HEAD
 
             .page-title {
                 flex-direction: column;
@@ -588,10 +895,16 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
     </style>
 </head>
 
+=======
+        }
+    </style>
+</head>
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 <body>
     <div class="container">
         <header>
             <div class="logo">
+<<<<<<< HEAD
                 <i class="fas fa-users"></i>
                 <span>Educollab</span>
             </div>
@@ -615,18 +928,41 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             <?php endif; ?>
         </div>
 
+=======
+                <i class="fas fa-cloud"></i>
+                <span>CloudDrive</span>
+            </div>
+            <a href="logout.php" class="logout-link">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </header>
+        
+        <h1 class="page-title">
+            <i class="fas fa-folder-open"></i> 
+            <?= $current_folder ? "Folder Contents" : "My Files" ?>
+        </h1>
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         <?php if (!empty($error)): ?>
             <div class="message error">
                 <i class="fas fa-exclamation-circle"></i> <?= $error ?>
             </div>
         <?php endif; ?>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         <?php if (!empty($success)): ?>
             <div class="message success">
                 <i class="fas fa-check-circle"></i> <?= $success ?>
             </div>
         <?php endif; ?>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         <div class="folder-nav">
             <div class="folder-controls">
                 <select name="folder" class="folder-select" onchange="window.location.href='?folder='+this.value">
@@ -637,26 +973,42 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
                         </option>
                     <?php endwhile; ?>
                 </select>
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
                 <a href="folders.php" class="btn btn-outline">
                     <i class="fas fa-folder-plus"></i> Manage Folders
                 </a>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
         <div class="file-list">
             <div class="file-list-header">
                 <div>File Name</div>
                 <div>Actions</div>
             </div>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
             <?php if ($result->num_rows > 0): ?>
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <div class="file-item">
                         <div class="file-info">
+<<<<<<< HEAD
                             <div class="file-icon-wrapper">
                                 <i class="fas fa-file-alt file-icon"></i>
                             </div>
+=======
+                            <i class="fas fa-file-alt file-icon"></i>
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
                             <div>
                                 <div class="file-name"><?= htmlspecialchars($row['original_name']) ?></div>
                                 <div id="rename-form-<?= $row['id'] ?>" style="display: none;">
@@ -664,10 +1016,17 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
                                         <input type="hidden" name="type" value="file">
                                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                                         <input type="text" name="new_name" value="<?= htmlspecialchars($row['original_name']) ?>" required>
+<<<<<<< HEAD
                                         <button type="submit" class="btn btn-primary">
                                             <i class="fas fa-save"></i> Save
                                         </button>
                                         <button type="button" onclick="hideRenameForm(<?= $row['id'] ?>)" class="btn btn-outline">
+=======
+                                        <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">
+                                            <i class="fas fa-save"></i> Save
+                                        </button>
+                                        <button type="button" onclick="hideRenameForm(<?= $row['id'] ?>)" class="btn btn-outline" style="padding: 0.5rem 1rem;">
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
                                             <i class="fas fa-times"></i> Cancel
                                         </button>
                                     </form>
@@ -695,6 +1054,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
                 </div>
             <?php endif; ?>
         </div>
+<<<<<<< HEAD
 
         <div class="upload-section">
             <a href="upload.php<?= $current_folder ? '?folder=' . $current_folder : '' ?>" class="upload-link">
@@ -735,6 +1095,14 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
                 $mc->close(); ?>
             </div>
         <?php endif; ?>
+=======
+        
+        <div class="upload-section">
+            <a href="upload.php<?= $current_folder ? '?folder='.$current_folder : '' ?>" class="upload-link">
+                <i class="fas fa-cloud-upload-alt"></i> Upload New File
+            </a>
+        </div>
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
     </div>
 
     <script>
@@ -743,16 +1111,25 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
             document.querySelectorAll('[id^="rename-form-"]').forEach(form => {
                 form.style.display = 'none';
             });
+<<<<<<< HEAD
 
             // Show the selected rename form
             const renameForm = document.getElementById('rename-form-' + fileId);
             renameForm.style.display = 'block';
 
+=======
+            
+            // Show the selected rename form
+            const renameForm = document.getElementById('rename-form-' + fileId);
+            renameForm.style.display = 'block';
+            
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
             // Focus the input field
             const inputField = renameForm.querySelector('input[type="text"]');
             inputField.focus();
             inputField.select();
         }
+<<<<<<< HEAD
 
         function hideRenameForm(fileId) {
             document.getElementById('rename-form-' + fileId).style.display = 'none';
@@ -769,4 +1146,12 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'student') {
     </script>
 </body>
 
+=======
+        
+        function hideRenameForm(fileId) {
+            document.getElementById('rename-form-' + fileId).style.display = 'none';
+        }
+    </script>
+</body>
+>>>>>>> 0e0bc586e62e850a8ff3052f88b6cc39b8523735
 </html>
